@@ -10,17 +10,20 @@ package com.andrewkhill.coolgame
  * @param asset The image file that [MapDisplayer] should use to represent the tile.
  */
 enum class Tiles (val symbol : String, val asset : String) {
+    GRASS("g", "tiles/grass.png");
 
+    companion object {
+        /**
+         * @param symbol The symbolic representation of the tile used in [TileMap]
+         * @return The [Tiles] enum object for the tile.
+         */
+        fun fromSymbol(symbol: String): Tiles? {
+            val map = Tiles.values().associateBy(Tiles::symbol)
+            return map.get(symbol)
+        }
+    }
 }
 
-/**
- * @param symbol The symbolic representation of the tile used in [TileMap]
- * @return The [Tiles] enum object for the tile.
- */
-fun fromSymbol(symbol : String) : Tiles? {
-    val map = Tiles.values().associateBy(Tiles::symbol)
-    return map.get(symbol)
-}
 /**
  * for char in map {
  *   Texture(Tiles.getTile(char))
