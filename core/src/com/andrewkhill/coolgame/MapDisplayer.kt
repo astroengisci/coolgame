@@ -18,7 +18,6 @@ class MapDisplayer (val tileMap: TileMap, val entityMap: EntityMap) {
      */
     fun render(spriteBatch: SpriteBatch)
     {
-        // TODO: Once TileMap is written, change this to render the map from tileMap
         // TODO: Once EntityMap is written, add code to render entities
         // The list of lines is reversed to convert from our internal y-down format
         // into libgdx's y-up standard.
