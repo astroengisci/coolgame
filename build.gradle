@@ -77,7 +77,7 @@ tasks.eclipse.doLast {
 }
 
 dokka {
-    outputFormat = 'html'
+    outputFormat = 'gfm'
     outputDirectory = "docs"
     sourceRoot {
         path = "core/src"
