@@ -15,6 +15,8 @@ enum class Tiles (val symbol : Char, val asset : String) {
     DIRT('d', "tiles/dirt.png");
 
     companion object {
+        /** The size of one side of the square tile assets, in pixels*/
+        val tileSize = 64
         /**
          * @param symbol The symbolic representation of the tile used in [TileMap]
          * @return The [Tiles] enum object for the tile.

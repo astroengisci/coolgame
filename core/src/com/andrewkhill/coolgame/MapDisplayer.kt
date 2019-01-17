@@ -28,9 +28,7 @@ class MapDisplayer (val tileMap: TileMap, val entityMap: EntityMap) {
             var x = 0f
             for (tile in line) {
                 val texture = Texture(Tiles.fromSymbol(tile)?.asset)
-                val height = texture.height
-                val width = texture.width
-                spriteBatch.draw(texture, x*width, y*height)
+                spriteBatch.draw(texture, x*Tiles.tileSize, y*Tiles.tileSize)
                 x++
             }
             y++

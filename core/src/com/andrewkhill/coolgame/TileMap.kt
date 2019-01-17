@@ -18,6 +18,8 @@ package com.andrewkhill.coolgame
  * @constructor Creates a map from the given string representation.
  */
 class TileMap (val map : Array<String>) {
+    val height = map.count()
+    val width = map[0].count()
 
     fun ChangeTileType (x : Int, y : Int, newType : Char) {
 
