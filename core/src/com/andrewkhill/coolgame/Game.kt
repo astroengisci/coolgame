@@ -9,17 +9,19 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 class Game : ApplicationAdapter() {
     lateinit internal var batch: SpriteBatch
     lateinit internal var img: Texture
+    lateinit internal var mapDisplayer: MapDisplayer
 
     override fun create() {
         batch = SpriteBatch()
         img = Texture("badlogic.jpg")
+        mapDisplayer = MapDisplayer(TileMap("foop"), EntityMap())
     }
 
     override fun render() {
         Gdx.gl.glClearColor(1f, 0f, 0f, 1f)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         batch.begin()
-        batch.draw(img, 0f, 0f)
+        mapDisplayer.render(batch)
         batch.end()
     }
 
