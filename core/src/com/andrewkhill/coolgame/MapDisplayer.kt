@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
  * @param tileMap The [TileMap] for the battlefield.
  * @param entityMap The [EntityMap] for the battlefield.
  */
-class MapDisplayer (tileMap: TileMap, entityMap: EntityMap) {
+class MapDisplayer (val tileMap: TileMap, val entityMap: EntityMap) {
 
     /**
      * Given a [SpriteBatch], renders the current state of the map.
@@ -22,7 +22,7 @@ class MapDisplayer (tileMap: TileMap, entityMap: EntityMap) {
         // TODO: Once EntityMap is written, add code to render entities
         // The list of lines is reversed to convert from our internal y-down format
         // into libgdx's y-up standard.
-        val map = "gsdgsd\ndgsdgs\ngsdgsd\ndgsdgs\ngsdgsd\ndgsdgs".lines().reversed()
+        val map = tileMap.map.reversed()
 
         var y = 0f
         for (line in map) {

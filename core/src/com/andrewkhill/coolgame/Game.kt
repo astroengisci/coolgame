@@ -10,11 +10,14 @@ class Game : ApplicationAdapter() {
     lateinit internal var batch: SpriteBatch
     lateinit internal var img: Texture
     lateinit internal var mapDisplayer: MapDisplayer
+    lateinit internal var tileMap : TileMap
 
     override fun create() {
         batch = SpriteBatch()
         img = Texture("badlogic.jpg")
-        mapDisplayer = MapDisplayer(TileMap("foop"), EntityMap())
+        // Temporary declaration
+        tileMap = TileMap("gsdgsd\ndgsdgs\ngsdgsd\ndgsdgs\ngsdgsd\ndgsdgs".lines().toTypedArray())
+        mapDisplayer = MapDisplayer(tileMap, EntityMap())
     }
 
     override fun render() {
